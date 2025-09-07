@@ -1,14 +1,12 @@
-// src/components/Footer.jsx
-
 import React from 'react';
-// Navbar'daki logomuz için gerekli ikonu tekrar import ediyoruz
+
 import { FaStethoscope, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaCheckCircle } from 'react-icons/fa';
 
-// Linkleri veri olarak tanımlıyoruz
+
 const footerLinks = [
   {
     title: 'Hızlı Bağlantılar',
-    // İstediğin gibi Navbar linklerini kullanıyoruz
+    
     links: [
       { name: 'Ana Sayfa', href: '/' },
       { name: 'Doktor Bul', href: '/doktor-bul' },
@@ -68,7 +66,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Sütun 2, 3: Linkler (Dinamik olarak oluşturuluyor) */}
+          
           {footerLinks.map((column) => (
             <div key={column.title}>
               <h3 className="text-lg font-semibold mb-4">{column.title}</h3>
