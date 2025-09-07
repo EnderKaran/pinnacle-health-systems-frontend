@@ -5,6 +5,7 @@ import WhyChooseUs from './components/WhyChooseUs';
 import PopularSpecialties from './components/PopularSpecialties';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
+import Footer from './components/Footer';
 
 import './App.css'
 
@@ -22,7 +23,8 @@ function App() {
         <PopularSpecialties />
         <Testimonials />
         <CTA />
-      </main>
+        </main>
+        <Footer />
       </div>
     </>
   )
