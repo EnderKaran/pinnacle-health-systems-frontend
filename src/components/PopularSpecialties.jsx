@@ -1,11 +1,8 @@
-// src/components/PopularSpecialties.jsx
-
-import React from 'react';
 import { motion } from 'framer-motion';
 // İkonlar
 import { FaHeartbeat, FaBrain, FaBone, FaEye, FaTeeth, FaLungs, FaFemale, FaBaby } from 'react-icons/fa';
 
-// Veri dizimizi oluşturuyoruz
+
 const specialtiesData = [
   { icon: FaHeartbeat, name: 'Kardiyoloji', count: 1240, color: { bg: 'bg-red-100', text: 'text-red-500' } },
   { icon: FaBrain, name: 'Nöroloji', count: 856, color: { bg: 'bg-purple-100', text: 'text-purple-500' } },
@@ -17,7 +14,7 @@ const specialtiesData = [
   { icon: FaLungs, name: 'Kulak Burun Boğaz', count: 680, color: { bg: 'bg-orange-100', text: 'text-orange-500' } },
 ];
 
-// Framer Motion için animasyon varyantları
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -51,26 +48,27 @@ const PopularSpecialties = () => {
           </p>
         </div>
 
-        
         <motion.div 
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible" // Ekrana girince animasyonu başlat
-          viewport={{ once: true, amount: 0.2 }} // Animasyon bir kere çalışsın
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
           {specialtiesData.map((specialty) => (
+            
             <motion.div
               key={specialty.name}
-              className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex items-center gap-4"
+              className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col sm:flex-row items-center gap-4"
               variants={itemVariants}
             >
-              <div className={`p-4 rounded-xl self-start ${specialty.color.bg}`}>
+              <div className={`p-4 rounded-xl self-center sm:self-start ${specialty.color.bg}`}>
                 <specialty.icon className={`w-7 h-7 ${specialty.color.text}`} />
               </div>
-              <div>
+              
+              <div className="text-center sm:text-left">
                 <h3 className="text-lg font-bold text-gray-800">{specialty.name}</h3>
-                <p className="text-gray-500">{specialty.count} uzman doktor</p>
+                <p className="text-gray-500 text-sm">{specialty.count} uzman doktor</p>
               </div>
             </motion.div>
           ))}
