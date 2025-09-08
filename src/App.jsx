@@ -1,33 +1,40 @@
+// src/App.jsx
+
+import React from 'react';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import FeaturedDoctors from './components/FeaturedDoctors';
-import WhyChooseUs from './components/WhyChooseUs';
-import PopularSpecialties from './components/PopularSpecialties';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import './App.css';
 
-import './App.css'
-
-function App() {
- 
-
+// 1. Tüm sayfalarda ortak olacak yerleşim bileşeni
+const Layout = () => {
   return (
-    <>
-      <div className="bg-gray-50">
+    <div className="bg-gray-50">
       <Navbar />
       <main>
-        <Hero />
-        <FeaturedDoctors />
-        <WhyChooseUs />
-        <PopularSpecialties />
-        <Testimonials />
-        <CTA />
-        </main>
-        <Footer />
-      </div>
-    </>
-  )
+        
+        <Outlet /> 
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+// 2. Rota tanımlarını yapan ana App bileşeni
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        
+        <Route index element={<HomePage />} /> 
+        
+        <Route path="hakkimizda" element={<AboutPage />} />
+        
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;
