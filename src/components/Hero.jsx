@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import HeroImage from '../assets/hero-background.png';
-// İkonlar
 import { FaSearch, FaMapMarkerAlt, FaUserMd, FaCalendarCheck, FaShieldAlt } from 'react-icons/fa';
 
 const Hero = () => {
+  // 3. STATE VE NAVIGATE TANIMLAMALARI
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+  const navigate = useNavigate();
+
+  // 4. ARAMA VE YÖNLENDİRME FONKSİYONUNU
+  const handleSearch = (e) => {
+    e.preventDefault(); // Form'un sayfayı yenilemesini engelle
+
+    const params = new URLSearchParams();
+    if (searchQuery) {
+      params.append('query', searchQuery);
+    }
+    if (selectedCity) {
+      params.append('city', selectedCity);
+    }
+
+    navigate(`/doktor-bul?${params.toString()}`);
+  };
+
   return (
     <section 
       className="relative w-full bg-cover bg-center py-24 sm:py-32" 
@@ -13,7 +34,6 @@ const Hero = () => {
 
       <div className="relative container mx-auto px-4 flex flex-col justify-center items-center text-center md:items-start md:text-left">
         {/* Başlık ve Alt Başlık */}
-        
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white md:text-gray-800 leading-tight">
           Sağlığınız için <br className="hidden sm:inline-block" /> doğru uzmanı bulun
         </h1>
@@ -21,34 +41,48 @@ const Hero = () => {
         <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-200 md:text-gray-600 max-w-lg px-2 sm:px-0">
           Türkiye'nin dört bir yanındaki binlerce uzman doktora anında ulaşın ve online randevu alın.
         </p>
-
         
-        <div className="mt-6 p-3 sm:p-4 bg-white rounded-xl shadow-2xl w-full max-w-3xl flex flex-col md:flex-row items-center gap-3 sm:gap-4">
+        {/* Arama Formu */}
+        <form 
+          onSubmit={handleSearch}
+          className="mt-6 p-3 sm:p-4 bg-white rounded-xl shadow-2xl w-full max-w-3xl flex flex-col md:flex-row items-center gap-3 sm:gap-4"
+        >
           <div className="relative w-full">
             <FaSearch className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input type="text" placeholder="Uzmanlık, hastalık veya doktor adı" className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input 
+              type="text" 
+              placeholder="Uzmanlık, hastalık veya doktor adı" 
+              className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
           <div className="relative w-full md:w-80">
             <FaMapMarkerAlt className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-gray-400" />
-            <select className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+            <select 
+              className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+            >
               <option value="">Şehir seçin...</option>
-              <option value="istanbul">İstanbul</option>
-              <option value="ankara">Ankara</option>
-              <option value="izmir">İzmir</option>
+              <option value="İstanbul">İstanbul</option>
+              <option value="Ankara">Ankara</option>
+              <option value="İzmir">İzmir</option>
             </select>
           </div>
-          <button className="w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-bold rounded-lg whitespace-nowrap hover:opacity-90 transition-opacity">
+          <button 
+            type="submit"
+            className="w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-bold rounded-lg whitespace-nowrap hover:opacity-90 transition-opacity"
+          >
             Randevu Al
           </button>
-        </div>
+        </form>
 
         {/* Bilgi Kartları */}
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center w-full max-w-sm sm:max-w-4xl">
           <div className="flex flex-col items-center p-3 sm:p-0"> 
             <div className="p-3 sm:p-4 bg-blue-100/70 rounded-full"><FaUserMd className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" /></div>
-            {/* RENK DEĞİŞİKLİĞİ: Mobil için text-white, md ve sonrası için text-gray-800 */}
             <h3 className="mt-3 sm:mt-4 text-lg sm:text-xl font-semibold text-white md:text-gray-800">10,000+ Uzman Doktor</h3>
-            {/* RENK DEĞİŞİKLİĞİ: Mobil için text-gray-200, md ve sonrası için text-gray-600 */}
             <p className="mt-1 text-sm sm:text-base text-gray-200 md:text-gray-600 px-2">Türkiye'nin her yerinden uzman doktorlarla buluşun.</p>
           </div>
           <div className="flex flex-col items-center p-3 sm:p-0">

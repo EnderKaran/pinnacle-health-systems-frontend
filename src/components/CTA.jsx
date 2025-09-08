@@ -1,7 +1,8 @@
 // src/components/CTA.jsx
 
 import React from 'react';
-import { AnimatedCounter } from './magicui/animated-counter'; 
+import { AnimatedCounter } from './magicui/animated-counter';
+import { Link } from 'react-router-dom';
 
 
 const statsData = [
@@ -21,9 +22,13 @@ const CTA = () => {
 
         {/* Buton Grubu */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button className="border-2 border-white/80 text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 w-full sm:w-auto">
+         
+          <Link
+            to="/doktor-bul" 
+            className="border-2 border-white/80 text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 w-full sm:w-auto"
+          >
             Doktor Bul
-          </button>
+          </Link>
         </div>
 
         {/* İstatistikler Bölümü */}

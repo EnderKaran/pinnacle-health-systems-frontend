@@ -9,6 +9,8 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import { Link } from 'react-router-dom';
+
 function FeaturedDoctors() {
     const [doctors, setDoctors] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -84,9 +86,12 @@ function FeaturedDoctors() {
                 </Swiper>
 
                 <div className="text-center mt-8 md:mt-12">
-                    <button className="px-8 py-3 border-2 border-blue-500 text-blue-500 font-bold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300">
-                        Tüm Doktorları Görüntüle
-                    </button>
+                              <Link
+                                to="/doktor-bul" 
+                                className="px-8 py-3 border-2 border-blue-500 text-blue-500 font-bold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
+                              >
+                                Tüm Doktorları Görüntüle
+                              </Link>                          
                 </div>
             </div>
         </section>
