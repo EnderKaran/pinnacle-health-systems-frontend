@@ -1,21 +1,13 @@
-# 🏥 Pinnacle Health Systems - Frontend
+# Pinnacle Health Systems - Frontend
 
 Modern, dinamik ve kullanıcı odaklı bir sağlık randevu platformu ön yüzü. Bu proje, React ekosisteminin en iyi pratikleri ve modern tasarım araçları kullanılarak, kullanıcıların sağlık hizmetlerine kolayca erişimini sağlamak amacıyla geliştirilmiştir.
 
-![Proje Ekran Görüntüsü](screenshot.png)
-*(Not: Bu `screenshot.png` dosyasını projenin ana dizinine kendin eklemelisin. Sitenin ana sayfasının ekran görüntüsünü alıp bu isimle kaydetmen yeterli.)*
+## Ekran Görüntüsü
+<img width="1911" height="874" alt="image" src="https://github.com/user-attachments/assets/5af70588-daa4-4c36-bd33-6278f5e87db2" />
 
 ---
 
-## ✨ Canlı Demo
-
-Projenin canlı demosuna aşağıdaki linkten ulaşabilirsiniz:
-
-**[https://enderkaran.github.io/pinnacle-health-systems-frontend/](https://<enderkaran.github.io/pinnacle-health-systems-frontend/)**
-
----
-
-## 🚀 Proje Özellikleri
+## Proje Özellikleri
 
 - **Çok Sayfalı Yapı:** `React Router` ile yönetilen 4 ana sayfa:
   - **Ana Sayfa:** Karşılama (Hero), öne çıkan doktorlar, popüler uzmanlıklar ve dinamik istatistikler.
@@ -30,7 +22,7 @@ Projenin canlı demosuna aşağıdaki linkten ulaşabilirsiniz:
 
 ---
 
-## 🎨 Tasarım ve UI/UX Süreci
+## Tasarım ve UI/UX Süreci
 
 Bu projenin kullanıcı arayüzü, modern tasarım araçları ve metodolojileri kullanılarak özenle oluşturulmuştur:
 
@@ -40,7 +32,7 @@ Bu projenin kullanıcı arayüzü, modern tasarım araçları ve metodolojileri 
 
 ---
 
-## 🏗️ Teknik Mimarisi ve React Tasarım Desenleri
+##  Teknik Mimarisi ve React Tasarım Desenleri
 
 Proje, bakımı kolay, ölçeklenebilir ve performanslı bir kod tabanı oluşturmak amacıyla aşağıdaki React tasarım desenleri (Design Patterns) üzerine inşa edilmiştir:
 
@@ -52,7 +44,7 @@ Proje, bakımı kolay, ölçeklenebilir ve performanslı bir kod tabanı oluştu
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+##  Kullanılan Teknolojiler
 
 - **Frontend:** React, Vite, Tailwind CSS
 - **Routing:** React Router DOM
@@ -63,11 +55,11 @@ Proje, bakımı kolay, ölçeklenebilir ve performanslı bir kod tabanı oluştu
 
 ---
 
-## 📦 Kurulum ve Başlatma
+## Kurulum ve Başlatma
 
 1.  **Depoyu klonlayın:**
     ```bash
-    git clone https://github.com/<github-kullanici-adiniz>/pinnacle-health-systems-frontend.git
+    git clone https://github.com/EnderKaran/pinnacle-health-systems-frontend.git
     cd pinnacle-health-systems-frontend
     ```
 2.  **Paketleri yükleyin:**
@@ -81,7 +73,7 @@ Proje, bakımı kolay, ölçeklenebilir ve performanslı bir kod tabanı oluştu
 
 ---
 
-## 📂 Proje Dosya Yapısı
+## Proje Dosya Yapısı
 
 Proje, modüler ve anlaşılır bir dosya yapısına sahiptir:
 
