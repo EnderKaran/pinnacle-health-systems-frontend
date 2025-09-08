@@ -1,21 +1,32 @@
+// src/components/magicui/blur-in.jsx
+
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-
-const BlurIn = ({ word, className, variant, duration = 0.5 }) => { 
+const BlurIn = ({ word, className, variant, duration = 0.5 }) => {
+  
   const defaultVariants = {
-    hidden: { filter: "blur(10px)", opacity: 0 },
-    visible: { filter: "blur(0px)", opacity: 1 },
+    hidden: {
+      opacity: 0,
+      y: 20, 
+    },
+    visible: {
+      opacity: 1,
+      y: 0, 
+    },
   };
+
   const combinedVariants = variant || defaultVariants;
 
   return (
+    
     <motion.div
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true }}
       transition={{ duration }}
       variants={combinedVariants}
-      className={cn(className)} // Sadece dışarıdan gelen className'i uygulanıyor
+      className={cn(className)}
     >
       {word}
     </motion.div>

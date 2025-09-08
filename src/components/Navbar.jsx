@@ -1,36 +1,56 @@
+// src/components/Navbar.jsx
+
 import { useState } from 'react';
 import { FaStethoscope } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
+// 1. Standart 'a' etiketi yerine 'Link' ve 'NavLink' import ediyoruz.
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  //nav linkleri
+  // 2. 'href' anahtarını 'to' olarak güncelliyoruz, çünkü React Router bu şekilde kullanıyor.
   const navLinks = [
-    { href: "/", label: "Ana Sayfa" },
-    { href: "/hakkimizda", label: "Hakkımızda" },
-    { href: "/doktor-bul", label: "Doktor Bul" },
-    { href: "/iletisim", label: "İletişim" },
+    { to: "/", label: "Ana Sayfa" },
+    { to: "/hakkimizda", label: "Hakkımızda" },
+    { to: "/doktor-bul", label: "Doktor Bul" },
+    { to: "/iletisim", label: "İletişim" },
   ];
+
+  // Mobil menüyü kapatmak için bir yardımcı fonksiyon
+  const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
     <>
       {/* 1. Navbar'ın kendisi */}
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Logo Kısmı */}
-          <a href="/" className="flex items-center space-x-2">
+          {/* Logo Kısmı: 'a' yerine 'Link' kullanıyoruz */}
+          <Link to="/" className="flex items-center space-x-2" onClick={isMenuOpen ? closeMobileMenu : undefined}>
             <FaStethoscope className="w-8 h-8 text-blue-600" />
             <span className="text-2xl font-bold text-blue-600">Pinnacle</span>
-          </a>
+          </Link>
 
-          {/* Masaüstü Menü Linkleri */}
+          {/* Masaüstü Menü Linkleri: 'a' yerine 'NavLink' kullanıyoruz */}
           <ul className="hidden md:flex items-center space-x-4">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="px-4 py-2 rounded-full text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300">
+                {/* 
+                  NavLink, aktif olan linke özel stil vermemizi sağlar.
+                  className içine bir fonksiyon yazarak 'isActive' durumunu kontrol ederiz.
+                */}
+                <NavLink 
+                  to={link.to} 
+                  className={({ isActive }) => 
+                    `px-4 py-2 rounded-full transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-blue-100 text-blue-600 font-semibold' 
+                        : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    }`
+                  }
+                >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -48,7 +68,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div 
           className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
-          onClick={() => setIsMenuOpen(false)}
+          onClick={closeMobileMenu}
         ></div>
       )}
 
@@ -57,18 +77,29 @@ const Navbar = () => {
         {/* Menü Başlığı ve Kapatma Butonu */}
         <div className="flex justify-between items-center p-4 border-b">
             <h2 className="text-xl font-semibold text-gray-800">Menü</h2>
-            <button onClick={() => setIsMenuOpen(false)}>
+            <button onClick={closeMobileMenu}>
                 <HiX className="w-8 h-8 text-gray-700" />
             </button>
         </div>
 
-        {/* Mobil Menü Linkleri */}
+        {/* Mobil Menü Linkleri: 'a' yerine 'NavLink' kullanıyoruz */}
         <ul className="flex flex-col p-4">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="block w-full text-left py-3 px-3 rounded-lg text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-200">
+                <NavLink 
+                  to={link.to} 
+                  className={({ isActive }) => 
+                    `block w-full text-left py-3 px-3 rounded-lg text-lg transition-all duration-200 ${
+                      isActive
+                        ? 'bg-blue-100 text-blue-600 font-semibold'
+                        : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+                    }`
+                  }
+                  // 3. Linke tıklandığında mobil menüyü kapat
+                  onClick={closeMobileMenu}
+                >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
         </ul>
