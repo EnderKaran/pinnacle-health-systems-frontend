@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import './App.css';
 
 // 1. Tüm sayfalarda ortak olacak yerleşim bileşeni
@@ -31,6 +32,8 @@ function App() {
         <Route index element={<HomePage />} /> 
         
         <Route path="hakkimizda" element={<AboutPage />} />
+
+        <Route path="iletisim" element={<ContactPage />} />
         
       </Route>
     </Routes>
