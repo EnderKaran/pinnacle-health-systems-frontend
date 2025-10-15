@@ -105,4 +105,4 @@ Proje, modüler ve anlaşılır bir dosya yapısına sahiptir:
 - **GitHub:** `(https://github.com/EnderKaran)`
 - **LinkedIn:** `(https://www.linkedin.com/in/ender-karan-52303b187)`
 
-Proje ile ilgili herhangi bir soru veya geri bildirim için bana ulaşmaktan çekinmeyin!````
+Proje ile ilgili herhangi bir soru veya geri bildirim için bana ulaşmaktan çekinmeyin!
