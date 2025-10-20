@@ -18,8 +18,8 @@ const footerLinks = [
     links: [
       { name: 'Hakkımızda', to: '/hakkimizda' },
       { name: 'Kariyer', to: '/kariyer' }, //yeni yapılan sayfa
-      { name: 'Basın', to: '#' },
-      { name: 'Ortaklarımız', to: '#' },
+      { name: 'Basın', to: '/basin' }, //yeni yapılan sayfa
+      { name: 'Ortaklarımız', to: '/ortaklarimiz' }, //yeni yapılan sayfa
     ]
   },
   {
