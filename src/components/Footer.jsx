@@ -27,8 +27,8 @@ const footerLinks = [
     links: [
       { name: 'Yardım Merkezi', to: '#' },
       { name: 'Sık Sorulan Sorular', to: '/sık-sorulan-sorular' }, //yeni yapılan sayfa
-      { name: 'Gizlilik Politikası', to: '#' },
-      { name: 'Kullanım Koşulları', to: '#' },
+      { name: 'Gizlilik Politikası', to: '/gizlilik-politikasi' }, //yeni yapılan sayfa
+      { name: 'Kullanım Koşulları', to: '/kullanim-kosullari' },
     ]
   }
 ];
