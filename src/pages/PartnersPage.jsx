@@ -5,26 +5,21 @@ import { cn } from "../lib/utils";
 import BlurIn from '../components/magicui/blur-in';
 import Marquee from '../components/ui/marquee';
 
-// 1. Ayrı bir "PartnerCard" bileşeni oluşturuyoruz. Bu, kodu daha temiz yapar.
-// Örnekteki ReviewCard'dan ilham alındı.
 const PartnerCard = ({ name }) => {
   return (
     <figure
       className={cn(
-        "relative flex h-24 w-48 cursor-pointer items-center justify-center overflow-hidden rounded-xl border p-4",
-        // Projenizin aydınlık temasına uygun stiller
+        "relative flex h-24 w-48 cursor-pointer items-center justify-center overflow-hidden rounded-xl border p-4",       
         "border-gray-950/[.1] bg-white hover:bg-gray-950/[.05]"
       )}
     >
       <div className="flex flex-col items-center justify-center">
-        {/* İleride bir logo eklemek isterseniz, bu span'ı bir img etiketiyle değiştirebilirsiniz */}
         <span className="text-lg font-bold text-gray-700">{name}</span>
       </div>
     </figure>
   );
 };
 
-// 2. Tüm ortak verilerini tek bir dizide topluyoruz.
 const partners = [
   { name: "TechCorp", username: "@techcorp" },
   { name: "HealthWell", username: "@healthwell" },
@@ -40,7 +35,6 @@ const partners = [
   { name: "FutureMeds", username: "@futuremeds" },
 ];
 
-// 3. Veriyi, örnekteki gibi ikiye bölüyoruz.
 const firstRow = partners.slice(0, partners.length / 2);
 const secondRow = partners.slice(partners.length / 2);
 
@@ -48,7 +42,7 @@ const secondRow = partners.slice(partners.length / 2);
 const PartnersPage = () => {
   return (
     <>
-      {/* Hero Bölümü (Değişiklik yok) */}
+      {/* Hero Bölümü  */}
       <section className="bg-white py-20 border-b border-gray-200">
         <div className="container mx-auto px-4 text-center">
           <BlurIn
@@ -63,12 +57,11 @@ const PartnersPage = () => {
         </div>
       </section>
 
-      {/* Ortaklar Marquee Bölümü (YENİ YAPI) */}
+      {/* Ortaklar Marquee Bölümü */}
       <section className="bg-gray-50 py-16 lg:py-20">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Birlikte Güçlüyüz</h2>
           
-          {/* 4. Örnekteki gibi ana Marquee konteyneri */}
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
             <Marquee pauseOnHover className="[--duration:50s]">
               {firstRow.map((partner) => (
@@ -87,7 +80,7 @@ const PartnersPage = () => {
         </div>
       </section>
 
-      {/* Partner Olma CTA'sı (Değişiklik yok) */}
+      {/* Partner Olma CTA'sı */}
       <section className="bg-white py-20">
           <div className="container mx-auto px-4 text-center max-w-3xl">
               <h2 className="text-3xl font-bold text-gray-800">Ortaklık Programımıza Katılın</h2>

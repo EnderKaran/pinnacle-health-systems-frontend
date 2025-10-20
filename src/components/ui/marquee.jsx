@@ -1,6 +1,6 @@
 // src/components/magicui/marquee.jsx
 
-import { cn } from "@/lib/utils"; // @ alias'ı kullanılıyor
+import { cn } from "@/lib/utils";
 
 export function Marquee({
   className,
@@ -39,6 +39,4 @@ export function Marquee({
     </div>
   );
 }
-
-// Varsayılan export'u kaldırıp isimlendirilmiş export'a geçtik, bu yüzden ismini de Marquee yapalım.
 export default Marquee;
