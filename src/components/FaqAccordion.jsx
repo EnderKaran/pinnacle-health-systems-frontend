@@ -3,7 +3,6 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { FaChevronDown } from 'react-icons/fa';
 
-// Sayfada göstereceğimiz soru ve cevaplar
 const faqData = [
   {
     question: "Pinnacle Health üzerinden nasıl randevu alabilirim?",

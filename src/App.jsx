@@ -9,6 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import DoctorsPage from './pages/DoctorsPage';
 import FaqPage from './pages/FaqPage';
+import CareerPage from './pages/CareerPage';
 import './App.css';
 
 // 1. Tüm sayfalarda ortak olacak yerleşim bileşeni
@@ -39,7 +40,9 @@ function App() {
 
         <Route path="doktor-bul" element={<DoctorsPage />} />
 
-        <Route path="sik-sorulan-sorular" element={<FaqPage />} />
+        <Route path="sık-sorulan-sorular" element={<FaqPage />} />
+
+        <Route path="kariyer" element={<CareerPage />} />
         
       </Route>
     </Routes>
