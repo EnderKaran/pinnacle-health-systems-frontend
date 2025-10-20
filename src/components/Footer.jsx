@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStethoscope, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaCheckCircle } from 'react-icons/fa';
 
-// 2. 'href' anahtarını React Router'ın kullandığı 'to' ile değiştiriyoruz.
 const footerLinks = [
   {
     title: 'Hızlı Bağlantılar',
@@ -18,7 +17,7 @@ const footerLinks = [
     title: 'Kurumsal',
     links: [
       { name: 'Hakkımızda', to: '/hakkimizda' },
-      { name: 'Kariyer', to: '#' },
+      { name: 'Kariyer', to: '/kariyer' }, //yeni yapılan sayfa
       { name: 'Basın', to: '#' },
       { name: 'Ortaklarımız', to: '#' },
     ]
@@ -27,14 +26,13 @@ const footerLinks = [
     title: 'Destek',
     links: [
       { name: 'Yardım Merkezi', to: '#' },
-      { name: 'Sık Sorulan Sorular', to: '/sik-sorulan-sorular' },
+      { name: 'Sık Sorulan Sorular', to: '/sık-sorulan-sorular' }, //yeni yapılan sayfa
       { name: 'Gizlilik Politikası', to: '#' },
       { name: 'Kullanım Koşulları', to: '#' },
     ]
   }
 ];
 
-// Sosyal medya linkleri dış bağlantı olabileceği için 'a' etiketi olarak kalabilir.
 const socialLinks = [
   { icon: FaFacebookF, href: '#' },
   { icon: FaTwitter, href: '#' },
