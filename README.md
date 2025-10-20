@@ -22,6 +22,70 @@ Modern, dinamik ve kullanıcı odaklı bir sağlık randevu platformu ön yüzü
 
 ---
 
+# Yeni Eklenen Sayfalar ve Kullanılan Kütüphaneler
+
+Proje, kurumsal ve destekleyici içerikleri barındıran, her biri farklı bir modern UI kütüphanesinin gücünden faydalanan yeni sayfalarla zenginleştirilmiştir.  
+Bu yaklaşım, projenin teknoloji yelpazesini genişletirken, her bir göreve en uygun aracın seçilmesi prensibini benimser.
+
+---
+
+## Yardım Merkezi (Help Center)
+
+**Kullanılan Kütüphaneler:** `DaisyUI`, `React Icons`  
+**Uygulanan Mantık:** Kullanıcının aradığı cevabı en hızlı şekilde bulmasını hedefleyen, üç aşamalı sağlam bir tasarıma sahiptir:
+
+- **Etkileşimli Arama:** Kullanıcıyı büyük bir arama çubuğu ile karşılar.  
+- **Kategorik Kılavuz:** İkonlarla zenginleştirilmiş DaisyUI kartları, sık karşılaşılan sorunları (“Hesap Yönetimi”, “Randevular” vb.) kategorilere ayırarak görsel bir navigasyon sunar.  
+- **Doğrudan Destek:** Aradığını bulamayan kullanıcıları, net bir **“İletişime Geçin”** butonu ile destek ekibine yönlendirir.
+
+---
+
+## Basın (Press)
+
+**Kullanılan Kütüphaneler:** `Magic UI`, `DaisyUI`, `Framer Motion`  
+**Uygulanan Mantık:** Basın bültenleri ve haberler, `Framer Motion`’ın `staggerChildren` animasyonu ile canlandırılmış bir grid yapısında sunulur.  
+Her bir haber, `DaisyUI`’ın `card` bileşeni ile tutarlı bir şekilde tasarlanmıştır.  
+Sayfanın sonunda, basın mensupları için kurumsal materyallerin indirilebileceği özel bir **Medya Kiti** bölümü bulunur.
+
+---
+
+## Sık Sorulan Sorular (SSS)
+
+**Kullanılan Kütüphane:** `Headless UI`  
+**Uygulanan Mantık:** Kullanıcıların sorulara hızlıca yanıt bulabilmesi için bir akordiyon menü yapısı kullanılmıştır.  
+`Headless UI`’ın `Disclosure` bileşeni, tamamen erişilebilir (accessible) ve stil içermeyen bir akordiyon iskeleti sunar.  
+Bu iskelet, projenin mevcut estetiğine uygun olarak `Tailwind CSS` ile sıfırdan ve tam kontrolle stillendirilmiştir.  
+Bu sayede, karmaşık UI mantığı (açma/kapama, klavye navigasyonu) kütüphaneye bırakılırken, tasarım tamamen özgün kalmıştır.
+
+---
+
+## Kariyer (Careers)
+
+**Kullanılan Kütüphane:** `DaisyUI`  
+**Uygulanan Mantık:** Açık pozisyonları listelemek için `DaisyUI`’ın sunduğu hazır bileşen sınıflarından (`card`, `badge`, `btn`) faydalanılmıştır.  
+`DaisyUI`, `Tailwind CSS`’e semantik sınıf adları ekleyerek, standart UI elemanlarının çok hızlı bir şekilde ve tutarlı bir tema ile oluşturulmasını sağlar.  
+Sayfadaki filtreleme mantığı, React’in `useState` hook’u ile yönetilmektedir.
+
+---
+
+## Ortaklarımız (Partners)
+
+**Kullanılan Kütüphane:** `Magic UI` (*Marquee Bileşeni*)  
+**Uygulanan Mantık:** Statik bir liste yerine, ortak logolarını (veya isimlerini) göstermek için sonsuz kayan bir animasyon (`marquee`) kullanılmıştır.  
+`Magic UI`’dan ilham alınan ve `Framer Motion` ile güçlendirilen bu bileşen, sayfaya modern ve dinamik bir hava katmaktadır.  
+İki şeridin zıt yönlerde hareket etmesi, görsel derinliği artırır.
+
+---
+
+## Gizlilik Politikası & Kullanım Koşulları
+
+**Kullanılan Kütüphane:** `@tailwindcss/typography`  
+**Uygulanan Mantık:** Bu metin ağırlıklı sayfalar için en temiz ve profesyonel çözüm tercih edilmiştir.  
+`@tailwindcss/typography` eklentisinin sunduğu `prose` sınıfı, standart HTML etiketlerini (`h2`, `p`, `ul` vb.) otomatik olarak okunaklı ve estetik bir şekilde biçimlendirir.  
+Bu sayede, her bir metin elemanını manuel olarak stillendirme ihtiyacı ortadan kalkar ve tüm yasal metin sayfalarında tam bir tasarım tutarlılığı sağlanır.
+
+---
+
 ## Tasarım ve UI/UX Süreci
 
 Bu projenin kullanıcı arayüzü, modern tasarım araçları ve metodolojileri kullanılarak özenle oluşturulmuştur:
