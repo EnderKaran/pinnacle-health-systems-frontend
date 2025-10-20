@@ -1,7 +1,5 @@
 // src/components/Footer.jsx
-
 import React from 'react';
-// 1. React Router'dan Link bileşenini import ediyoruz
 import { Link } from 'react-router-dom';
 import { FaStethoscope, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaCheckCircle } from 'react-icons/fa';
 
@@ -75,7 +73,6 @@ const Footer = () => {
                 {column.links.map((link) => (
                   <li key={link.name}>
                     {/* 4. Linkler için 'a' etiketini 'Link' ile değiştiriyoruz */}
-                    {/* '#' olan linkler için şimdilik 'a' etiketi bırakabiliriz veya Link to="#" yapabiliriz */}
                     {link.to === '#' ? (
                       <a href={link.to} className="text-gray-400 hover:text-white transition-colors cursor-not-allowed">
                         {link.name}

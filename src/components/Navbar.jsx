@@ -3,13 +3,11 @@
 import { useState } from 'react';
 import { FaStethoscope } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
-// 1. Standart 'a' etiketi yerine 'Link' ve 'NavLink' import ediyoruz.
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // 2. 'href' anahtarını 'to' olarak güncelliyoruz, çünkü React Router bu şekilde kullanıyor.
   const navLinks = [
     { to: "/", label: "Ana Sayfa" },
     { to: "/hakkimizda", label: "Hakkımızda" },
@@ -17,28 +15,21 @@ const Navbar = () => {
     { to: "/iletisim", label: "İletişim" },
   ];
 
-  // Mobil menüyü kapatmak için bir yardımcı fonksiyon
   const closeMobileMenu = () => setIsMenuOpen(false);
 
   return (
-    <>
-      {/* 1. Navbar'ın kendisi */}
+    <> 
       <header className="bg-white shadow-sm sticky top-0 z-40">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          {/* Logo Kısmı: 'a' yerine 'Link' kullanıyoruz */}
+         
           <Link to="/" className="flex items-center space-x-2" onClick={isMenuOpen ? closeMobileMenu : undefined}>
             <FaStethoscope className="w-8 h-8 text-blue-600" />
             <span className="text-2xl font-bold text-blue-600">Pinnacle</span>
           </Link>
 
-          {/* Masaüstü Menü Linkleri: 'a' yerine 'NavLink' kullanıyoruz */}
           <ul className="hidden md:flex items-center space-x-4">
             {navLinks.map((link) => (
               <li key={link.label}>
-                {/* 
-                  NavLink, aktif olan linke özel stil vermemizi sağlar.
-                  className içine bir fonksiyon yazarak 'isActive' durumunu kontrol ederiz.
-                */}
                 <NavLink 
                   to={link.to} 
                   className={({ isActive }) => 
@@ -82,7 +73,6 @@ const Navbar = () => {
             </button>
         </div>
 
-        {/* Mobil Menü Linkleri: 'a' yerine 'NavLink' kullanıyoruz */}
         <ul className="flex flex-col p-4">
             {navLinks.map((link) => (
               <li key={link.label}>

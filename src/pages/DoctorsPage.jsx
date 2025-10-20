@@ -4,14 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 
-// --- VERİ SABİTLERİ ---
-// Bu veriler normalde bir veritabanından veya API'den gelir.
 const specialties = ["Kardiyoloji", "Ortopedi", "Dermatoloji", "Nöroloji", "Pediatri", "Gastroenteroloji", "Endokrinoloji", "Psikiyatri"];
 const cities = ["İstanbul", "Ankara", "İzmir"];
-
-// ===================================================================
-// ==================== ALT BİLEŞENLER ===============================
-// ===================================================================
 
 // Arama ve Filtreleme Çubuğu Bileşeni
 const DoctorSearch = ({ filters, setFilters }) => (
@@ -92,9 +86,6 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
     );
 };
 
-// ===================================================================
-// ==================== ANA SAYFA BİLEŞENİ ===========================
-// ===================================================================
 const DoctorsPage = () => {
   const [allDoctors, setAllDoctors] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);

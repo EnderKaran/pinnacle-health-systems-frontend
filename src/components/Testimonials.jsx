@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaStar } from 'react-icons/fa';
 
-// 1. STATİK VERİ DİZİSİ: Yorum kartları için geri ekledik.
 const testimonialsData = [
   {
     name: 'Ayşe Kaya',
@@ -29,7 +28,6 @@ const testimonialsData = [
   }
 ];
 
-// 2. YARDIMCI BİLEŞEN: StarRating (Değişiklik yok, hem statik hem interaktif çalışabiliyor)
 const StarRating = ({ rating, onRate }) => {
   const [hover, setHover] = useState(0);
   const isInteractive = onRate !== undefined;
@@ -58,12 +56,10 @@ const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, trans
 const itemVariants = { hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.6 } } };
 
 const Testimonials = () => {
-  // --- LOCALSTORAGE DESTEKLİ STATE'LER (Aynı) ---
   const [averageRating, setAverageRating] = useState(() => parseFloat(localStorage.getItem('pinnacleAverageRating')) || 4.9);
   const [totalReviews, setTotalReviews] = useState(() => parseInt(localStorage.getItem('pinnacleTotalReviews')) || 25847);
   const [userRating, setUserRating] = useState(() => parseInt(localStorage.getItem('pinnacleUserRating')) || 0);
 
-  // --- OYLAMAYI YÖNETEN FONKSİYON (Aynı) ---
   const handleUserRating = (newRating) => {
     if (userRating > 0) return;
     const newTotalReviews = totalReviews + 1;
@@ -82,7 +78,7 @@ const Testimonials = () => {
   return (
     <section className="bg-white py-12 md:py-20">
       <div className="container mx-auto px-4">
-        {/* Başlık Bölümü (Orijinal haliyle geri geldi) */}
+        
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Hastalarımız Ne Diyor?</h2>
           <p className="mt-2 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -90,7 +86,6 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Yorum Kartları (Geri geldi) */}
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -112,7 +107,6 @@ const Testimonials = () => {
                 </div>
               </div>
               <div className="mt-4">
-                {/* Buradaki StarRating sadece gösterme amaçlı, bu yüzden 'onRate' prop'u yok */}
                 <StarRating rating={testimonial.rating} />
               </div>
               <p className="mt-6 text-gray-600 italic flex-grow">
@@ -132,7 +126,6 @@ const Testimonials = () => {
         >
           <h3 className="text-xl font-bold text-gray-800 mb-2">Genel Değerlendirme</h3>
           <div className='transform scale-125'>
-            {/* Bu StarRating interaktif, bu yüzden 'onRate' prop'u var */}
             <StarRating 
               rating={userRating > 0 ? userRating : averageRating} 
               onRate={handleUserRating}

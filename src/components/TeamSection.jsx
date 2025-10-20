@@ -41,7 +41,6 @@ function TeamSection() {
         const response = await fetch('https://randomuser.me/api/?results=6&nat=tr');
         const data = await response.json();
         
-        // Gelen veriye uzmanlık alanlarını ekliyoruz.
         const membersWithSpecialties = data.results.map((user, index) => ({
           ...user,
           specialty: specialties[index % specialties.length] 
@@ -56,7 +55,7 @@ function TeamSection() {
     };
 
     fetchTeam();
-  }, []); // Boş dependency array, component yüklendiğinde bir kez çalışmasını sağlar.
+  }, []); 
 
   return (
     <section className='bg-gray-50 py-16 lg:py-20'>
