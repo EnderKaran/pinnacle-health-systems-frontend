@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-// 1. BlurIn bileşenini import ediyoruz.
+
 import BlurIn from './magicui/blur-in';
 
 const timelineData = [
-  // ... (veri kısmı aynı kalıyor)
+  
   {
     year: "2010",
     title: "Kuruluş",
@@ -47,7 +47,7 @@ const HistoryTimeline = () => {
   return (
     <section className="bg-white py-16 lg:py-20">
       <div className="container mx-auto px-4">
-        {/* === BAŞLIK BÖLÜMÜ GÜNCELLENDİ === */}
+        
         <div className="text-center mb-16">
           <BlurIn
             word="Tarihçemiz"
@@ -60,7 +60,7 @@ const HistoryTimeline = () => {
           />
         </div>
 
-        {/* Zaman Çizelgesi (Bu kısım aynı kalıyor) */}
+       
         <div className="relative max-w-4xl mx-auto">
           {/* Dikey Çizgi */}
           <div className="absolute left-1/2 top-0 h-full w-0.5 bg-gray-200 -translate-x-1/2"></div>

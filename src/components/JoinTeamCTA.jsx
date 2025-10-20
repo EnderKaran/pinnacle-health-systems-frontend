@@ -1,7 +1,6 @@
 // src/components/JoinTeamCTA.jsx
 
 import React from 'react';
-// 1. 'Link' import'unu kaldırdık, 'motion' import'unu ekledik.
 import { motion } from 'framer-motion';
 import BlurIn from './magicui/blur-in';
 
