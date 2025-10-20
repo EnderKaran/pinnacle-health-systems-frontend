@@ -17,7 +17,7 @@ const footerLinks = [
   {
     title: 'Kurumsal',
     links: [
-      { name: 'Hakkımızda', to: '/hakkimizda' }, // Bunu da /hakkimizda olarak güncelledim
+      { name: 'Hakkımızda', to: '/hakkimizda' },
       { name: 'Kariyer', to: '#' },
       { name: 'Basın', to: '#' },
       { name: 'Ortaklarımız', to: '#' },
@@ -27,7 +27,7 @@ const footerLinks = [
     title: 'Destek',
     links: [
       { name: 'Yardım Merkezi', to: '#' },
-      { name: 'Sık Sorulan Sorular', to: '#' },
+      { name: 'Sık Sorulan Sorular', to: '/sik-sorulan-sorular' },
       { name: 'Gizlilik Politikası', to: '#' },
       { name: 'Kullanım Koşulları', to: '#' },
     ]
