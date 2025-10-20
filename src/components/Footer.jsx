@@ -25,10 +25,10 @@ const footerLinks = [
   {
     title: 'Destek',
     links: [
-      { name: 'Yardım Merkezi', to: '#' },
+      { name: 'Yardım Merkezi', to: '/yardim-merkezi' }, //yeni yapılan sayfa
       { name: 'Sık Sorulan Sorular', to: '/sık-sorulan-sorular' }, //yeni yapılan sayfa
       { name: 'Gizlilik Politikası', to: '/gizlilik-politikasi' }, //yeni yapılan sayfa
-      { name: 'Kullanım Koşulları', to: '/kullanim-kosullari' },
+      { name: 'Kullanım Koşulları', to: '/kullanim-kosullari' }, //yeni yapılan sayfa
     ]
   }
 ];

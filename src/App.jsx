@@ -14,6 +14,7 @@ import PressPage from './pages/PressPage';
 import PartnersPage from './pages/PartnersPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
+import HelpCenterPage from './pages/HelpCenterPage';
 import './App.css';
 
 // 1. Tüm sayfalarda ortak olacak yerleşim bileşeni
@@ -55,6 +56,8 @@ function App() {
         <Route path="gizlilik-politikasi" element={<PrivacyPolicyPage />} />
 
         <Route path="kullanim-kosullari" element={<TermsOfServicePage />} />
+
+        <Route path="yardim-merkezi" element={<HelpCenterPage />} />
         
       </Route>
     </Routes>
